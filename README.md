@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/vovak/astminer.svg?branch=master)](https://travis-ci.org/vovak/astminer)
 
-# AstMiner
+# AstMiner (JS support)
 A tool/library for mining of [path-based representations of code](https://arxiv.org/pdf/1803.09544.pdf).
 *Work in progress.*
 
