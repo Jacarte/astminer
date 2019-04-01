@@ -1,4 +1,4 @@
-package astminer.parse.antlr.python
+package astminer.parse.antlr.javascript
 
 import me.vovak.antlr.parser.ECMAScriptLexer
 import me.vovak.antlr.parser.ECMAScriptParser
@@ -16,7 +16,7 @@ class ECMAParser : Parser<SimpleNode> {
         val tokens = CommonTokenStream(lexer)
         val parser = ECMAScriptParser(tokens)
         parser.removeErrorListeners()
-        val context = parser.file_input()
+        val context = parser.program()
         return convertAntlrTree(context, ECMAScriptParser.ruleNames)
     }
 
