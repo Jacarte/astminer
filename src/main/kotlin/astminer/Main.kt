@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
 }
 
 fun runExamples() {
-    allJavaFilesGumTree()
+    /*allJavaFilesGumTree()
     allJavaFiles()
     allJavaMethods()
     allPythonFiles()
@@ -15,5 +15,7 @@ fun runExamples() {
 
     AllJavaFiles.runExample()
 
-    allJavaAsts()
+    *///allJavaAsts()
+
+    groupTreesByRepo()
 }

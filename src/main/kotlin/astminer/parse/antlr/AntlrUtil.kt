@@ -1,12 +1,39 @@
 package astminer.parse.antlr
 
 import astminer.common.Node
+import astminer.parser.babel_tree.BabelTreeNode
 import org.antlr.v4.runtime.ParserRuleContext
 import org.antlr.v4.runtime.tree.ErrorNode
 import org.antlr.v4.runtime.tree.TerminalNode
 
 fun convertAntlrTree(tree: ParserRuleContext, ruleNames: Array<String>): SimpleNode {
     return simplifyTree(convertRuleContext(tree, ruleNames, null))
+}
+
+fun convertBabelTree(tree: BabelTreeNode): SimpleNode{
+    return convertBabelContext(tree, null);
+}
+
+private fun convertBabelContext(tree: BabelTreeNode, parent: Node?): SimpleNode{
+    val typeLabel = tree.name
+
+    val currentNode = SimpleNode(typeLabel, parent, null)
+
+    val children: MutableList<Node> = ArrayList()
+
+    tree.children.forEach {
+        if(it.isTerminal){
+            children.add(SimpleNode("Terminal", currentNode,  it.anyways))
+
+            return@forEach
+        }
+
+        children.add(convertBabelContext(it, currentNode))
+    }
+
+    currentNode.setChildren(children)
+
+    return currentNode
 }
 
 private fun convertRuleContext(ruleContext: ParserRuleContext, ruleNames: Array<String>, parent: Node?): SimpleNode {
