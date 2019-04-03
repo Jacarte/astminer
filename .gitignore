@@ -2,3 +2,4 @@
 .idea/
 .gradle/
 examples/out/
+node_modules/

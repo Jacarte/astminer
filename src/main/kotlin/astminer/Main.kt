@@ -16,5 +16,6 @@ fun runExamples() {
     AllJavaFiles.runExample()
 
     *///allJavaAsts()
-    allJsFiles()
+
+    groupTreesByRepo()
 }

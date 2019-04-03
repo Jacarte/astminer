@@ -14,6 +14,7 @@ class ECMAParser : Parser<SimpleNode> {
         val lexer = ECMAScriptLexer(CharStreams.fromStream(content))
         lexer.removeErrorListeners()
         val tokens = CommonTokenStream(lexer)
+
         val parser = ECMAScriptParser(tokens)
         parser.removeErrorListeners()
         val context = parser.program()
