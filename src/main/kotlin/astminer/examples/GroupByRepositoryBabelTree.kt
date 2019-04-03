@@ -11,13 +11,12 @@ import java.io.File
 
 
 fun groupTreesByRepo() {
-    val folder = "/Users/javiercabrera/Documents/Develop/CodeAspirator/clones"
+    val folder = ""
 
     File(folder).list().forEach { f ->
 
 
         val repoFolder = "$folder/$f"
-        val exclude = arrayOf("bower_components", "node_modules")
 
         if(File(repoFolder).isDirectory) {
 
@@ -29,7 +28,7 @@ fun groupTreesByRepo() {
 
             File(repoFolder).walkTopDown().filter { it.path.endsWith(".tree") }.forEach { file ->
 
-                if(!file.isDirectory && !exclude.any { s -> file.path.contains(s) }){
+                if(!file.isDirectory ){
                     try {
 
                         print("Parsing $file\n")
