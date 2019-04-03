@@ -8,7 +8,7 @@ A tool/library for mining of [path-based representations of code](https://arxiv.
 
 #### This version
 * Supporting <a href="https://github.com/Jacarte/jastgen" target="_blank">generic AST json structure</a> for js files (parsed using babel-parser)
-
+* Basic ANTLR4 ECMAScript grammar
 
 #### 0.2
 
