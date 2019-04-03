@@ -6,6 +6,10 @@ A tool/library for mining of [path-based representations of code](https://arxiv.
 
 ### Version history
 
+#### This version
+* Supporting <a href="https://github.com/Jacarte/jastgen" target="_blank">generic AST json structure</a> for js files (parsed using babel-parser)
+
+
 #### 0.2
 
 * Mining of ASTs
@@ -14,8 +18,6 @@ A tool/library for mining of [path-based representations of code](https://arxiv.
 * AstMiner is available via Maven Central
 * Support of Java and Python
 * Mining of [path-based representations of code](https://arxiv.org/pdf/1803.09544.pdf)
-
-#### Supporting <a href="https://github.com/Jacarte/jastgen" target="_blank">generic AST json structure</a> for js files (parsed using babel-parser)
 
 ## About
 This is an offspring of an internal utility from our ongoing research project.
